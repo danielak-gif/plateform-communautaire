@@ -101,7 +101,7 @@
             max-width:1100px;
             margin:0 auto 30px;
             display:grid;
-            grid-template-columns:repeat(3,1fr);
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
             gap:15px;
         }
 
@@ -110,6 +110,29 @@
             border:1px solid #e8e6e1;
             border-radius:16px;
             padding:18px;
+        }
+
+        .table-responsive {
+            width:100%;
+            overflow-x:auto;
+            margin-bottom:30px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding:20px 10px;
+            }
+
+            .export {
+                flex-direction:column;
+                gap:10px;
+                align-items:flex-start;
+            }
+
+            .nav a {
+                display:inline-block;
+                margin:6px 8px;
+            }
         }
 
         .chart-title {
@@ -225,10 +248,10 @@
     new Chart(document.getElementById('chartCategorie'), {
         type: 'bar',
         data: {
-            labels: {!! json_encode($par_categorie->keys() ?? []) !!},
+            labels: {!! json_encode($par_categorie ? $par_categorie->keys()->toArray() : []) !!},
             datasets: [{
                 label: 'Catégories',
-                data: {!! json_encode($par_categorie->values() ?? []) !!}
+                data: {!! json_encode($par_categorie ? $par_categorie->values()->toArray() : []) !!}
             }]
         }
     });
@@ -237,25 +260,27 @@
     new Chart(document.getElementById('chartNiveau'), {
         type: 'bar',
         data: {
-            labels: {!! json_encode($par_niveau->keys() ?? []) !!},
+            labels: {!! json_encode($par_niveau ? $par_niveau->keys()->toArray() : []) !!},
             datasets: [{
                 label: 'Niveaux',
-                data: {!! json_encode($par_niveau->values() ?? []) !!}
+                data: {!! json_encode($par_niveau ? $par_niveau->values()->toArray() : []) !!}
             }]
         }
     });
 </script>
 
-<table>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Catégorie</th>
-            <th>Secteur</th>
-            <th>Statut</th>
-        </tr>
-    </thead>
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Catégorie</th>
+                <th>Secteur</th>
+                <th>Statut</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
 
     <tbody>
         @forelse($profiles as $profile)
@@ -269,16 +294,29 @@
                         {{ ucfirst($profile->statut) }}
                     </span>
                 </td>
+                <td>
+                    @if($profile->statut === 'en_attente')
+                        <form method="POST" action="{{ route('admin.profiles.approuver', $profile->id) }}" style="display:inline">
+                            @csrf @method('PATCH')
+                            <button type="submit">✅ Approuver</button>
+                        </form>
+                        <form method="POST" action="{{ route('admin.profiles.rejeter', $profile->id) }}" style="display:inline">
+                            @csrf @method('PATCH')
+                            <button type="submit">❌ Rejeter</button>
+                        </form>
+                    @endif
+                </td>
             </tr>
         @empty
             <tr>
-                <td colspan="5" style="text-align:center; color:#888;">
+                <td colspan="6" style="text-align:center; color:#888;">
                     Aucun profil
                 </td>
             </tr>
         @endforelse
     </tbody>
 </table>
+</div>
 
 </body>
 </html>

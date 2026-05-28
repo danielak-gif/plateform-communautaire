@@ -7,6 +7,12 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
 body {
     font-family: 'Segoe UI', sans-serif;
     color: #1a1a1a;
@@ -30,7 +36,7 @@ body {
 .nav-top a:hover { color: #1a1a1a; }
 
 .hero {
-    max-width: 640px;
+    width: min(100%, 640px);
     margin: 80px auto;
     padding: 0 24px;
     text-align: center;
@@ -49,9 +55,13 @@ body {
     margin-bottom: 36px;
 }
 
-.hero img {
-    width: 78px;
-    margin-bottom: 20px;
+.logo {
+            width: auto;
+            max-width: 140px;
+            max-height: 56px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
 }
 
 .buttons {
@@ -103,6 +113,24 @@ body {
 .feature-card h3 { font-size: 14px; font-weight: 500; margin-bottom: 4px; color: #1a1a1a; }
 .feature-card p { font-size: 13px; color: #666; line-height: 1.5; }
 
+@media (max-width: 768px) {
+    .nav-top {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 12px;
+    }
+
+    .hero {
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -121,7 +149,7 @@ body {
     </div>
 
     <div class="hero">
-        <img src="/logo.png"> 
+        <img src="{{ asset('logo.png') }}" alt="Logo" class="logo"> 
         <h1>
             Plateforme Communautaire 
         </h1>

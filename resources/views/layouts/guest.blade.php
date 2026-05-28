@@ -19,7 +19,7 @@
 
             <div class="mb-6">
                 <a href="/">
-                    <img src="{{ asset('logo.png') }}" alt="Logo" class="h-12 w-auto">
+                    <img src="{{ asset('logo.png') }}" alt="Logo" class="logo" style="max-width:140px; max-height:56px; width:auto; height:auto;">
                 </a>
             </div>
 

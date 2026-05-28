@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo {
+    width: auto;
+    max-width: 140px;
+    max-height: 56px;
+    height: auto;
+    display: block;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .charts,
+    .stats,
+    .features,
+    .hero {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        margin: 40px auto;
+    }
+}

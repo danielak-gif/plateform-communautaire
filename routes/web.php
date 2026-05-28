@@ -33,6 +33,12 @@ Route::get('/annuaire', [CommunauteController::class, 'index'])->name('communaut
     Route::post('/annuaire/soumettre', [CommunauteController::class, 'store'])->name('communaute.store');
     Route::get('/annuaire/{profile}', [CommunauteController::class, 'show'])->name('communaute.show');
 
+Route::patch('/admin/profiles/{profile}/approuver', [AdminController::class, 'approuver'])
+     ->name('admin.profiles.approuver');
+
+Route::patch('/admin/profiles/{profile}/rejeter', [AdminController::class, 'rejeter'])
+     ->name('admin.profiles.rejeter');
+
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/',[AdminController::class, 'index'])->name('index');
     Route::post('/approuver/{profile}',[AdminController::class, 'approuver'])->name('approuver');

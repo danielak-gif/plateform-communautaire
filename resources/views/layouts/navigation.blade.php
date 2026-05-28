@@ -5,7 +5,7 @@
             <div class="flex items-center gap-8">
                 <!-- Logo -->
                 <a href="{{ route('dashboard') }}" class="shrink-0 flex items-center">
-                    <img src="{{ asset('logo.png') }}" alt="Logo" class="h-8 w-auto">
+                    <img src="{{ asset('logo.png') }}" alt="Logo" class="logo" style="max-width:140px; max-height:56px; width:auto; height:auto;">
                 </a>
 
                 <!-- Navigation Links -->
