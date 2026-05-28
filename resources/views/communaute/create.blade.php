@@ -2,120 +2,155 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta 
-        name="viewport" content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soumettre mon profil</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background-color : #0f0f0f;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f3ef;
+            color: #1c1c1a;
+            font-family: "DM Sans", system-ui, -apple-system, Segoe UI, sans-serif;
             min-height: 100vh;
             padding: 40px 20px;
         }
 
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 40px;
-            border:1px solid #2a2a2a;
-        }
-
-        h1 {
-            color: #4f9ef8;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        p.subtitle {
-            color: #888;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 6px;
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        input, select, textarea {
-            width : 100%;
-            padding: 12px 15px;
-            background: #252525;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: #e0e0e0;
-            font-size: 15px;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: #4f9ef8;
-        }
-
-        textarea { height: 120px; resize: vertical;}
-
-        .error {
-            color: #ff6b6d;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 14px;
-            background: #4f9ef8;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-            margin-top: 10px;
-        }
-
-        .btn:hover { background: #2d7dd2;}
-
+        /* NAV */
         .nav {
             text-align: center;
             margin-bottom: 30px;
         }
 
         .nav a {
-            color: #4f9ef8;
+            color: #1c1c1a;
             text-decoration: none;
-            margin: 0 15px;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: 0.2s;
+        }
+
+        .nav a:hover {
+            opacity: 1;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e8e6e1;
+            border-radius: 18px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: 30px;
+            color: #1c1c1a;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        /* FORM */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #1c1c1a;
+            opacity: 0.75;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: #ffffff;
+            border: 1px solid #e8e6e1;
+            border-radius: 14px;
+            font-size: 14px;
+            outline: none;
+            color: #1c1c1a;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #1c1c1a;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* ERROR */
+        .error {
+            color: #b00020;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* BUTTON */
+        .btn {
+            width: 100%;
+            padding: 13px;
+            background: #1c1c1a;
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
         }
     </style>
 </head>
+
 <body>
+
     <div class="nav">
-        <a href="{{ route('communaute.index') }}"><- Retour à l'annuaire</a>
+        <a href="{{ route('communaute.index') }}">← Retour à l'annuaire</a>
     </div>
-    
+
     <div class="container">
+
         <h1>Soumettre mon profil</h1>
-        <p class="subtitle">Remplissez ce formulaire pour rejoindre l'annuaire communautaire.</p>
+        <p class="subtitle">
+            Rejoignez l'annuaire communautaire et présentez votre activité.
+        </p>
 
         <form action="{{ route('communaute.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
-                <label>Nom_complet *</label>
-                <input type="text" name="nom_complet" value="{{ old('nom_complet') }}" placeholder="Ex: Jean Dupont"/>
-                @error('nom_complet') <p class="error">{{  $message }}</p> @enderror
+                <label>Nom complet *</label>
+                <input type="text" name="nom_complet" value="{{ old('nom_complet') }}" placeholder="Ex: Jean Dupont">
+                @error('nom_complet')
+                    <p class="error">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -134,12 +169,12 @@
 
             <div class="form-group">
                 <label>Secteur d'activité</label>
-                <input type="text" name="secteur" value="{{ old('secteur') }}" placeholder="Ex: Agriculture, Informatique..." />
+                <input type="text" name="secteur" value="{{ old('secteur') }}" placeholder="Ex: Informatique, Agriculture...">
             </div>
 
             <div class="form-group">
                 <label>Niveau d'étude</label>
-                <select name="niveau_etude" >
+                <select name="niveau_etude">
                     <option value="">-- Choisir --</option>
                     <option value="Bac">Bac</option>
                     <option value="Bac+2">Bac+2</option>
@@ -151,7 +186,7 @@
 
             <div class="form-group">
                 <label>Localisation</label>
-                <input type="text" name="localisation" value="{{ old('localisation') }}" placeholder="Ex: Cotonou, Abomey-Calavi...">
+                <input type="text" name="localisation" value="{{ old('localisation') }}" placeholder="Ex: Cotonou, Abomey-Calavi">
             </div>
 
             <div class="form-group">
@@ -161,7 +196,7 @@
 
             <div class="form-group">
                 <label>Biographie</label>
-                <textarea name="bio" placeholder="Parlez de vous, vos expériences, vos compétences...">{{ old('bio') }}</textarea>
+                <textarea name="bio" placeholder="Parlez de vous, vos compétences, expériences...">{{ old('bio') }}</textarea>
             </div>
 
             <div class="form-group">
@@ -170,7 +205,9 @@
             </div>
 
             <button type="submit" class="btn">Soumettre mon profil</button>
+
         </form>
     </div>
+
 </body>
 </html>

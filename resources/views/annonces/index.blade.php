@@ -4,156 +4,231 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Annonces</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background-color: #0f0f0f;
-            color: #e0e0e0;
-            font-family: 'Segeo UI', sans-serif;
+            background-color: #f5f3ef;
+            color: #1c1c1a;
+            font-family: "DM Sans", system-ui, -apple-system, Segoe UI, sans-serif;
             min-height: 100vh;
             padding: 40px 20px;
         }
 
+        /* HEADER */
         .header {
             text-align: center;
             margin-bottom: 40px;
         }
 
-        .header h1  { color: #4f9ef8; font-size: 32px; margin-bottom: 8px; }
-        .header p  {color: #888;}
+        .header h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: 34px;
+            color: #1c1c1a;
+            margin-bottom: 6px;
+        }
 
+        .header p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* NAV */
         .nav {
             text-align: center;
             margin-bottom: 30px;
         }
 
-        .nav a{
-            color: #4f9ef8;
+        .nav a {
+            color: #1c1c1a;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: 0.2s;
         }
 
+        .nav a:hover {
+            opacity: 1;
+        }
+
+        /* CONTAINER */
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
 
+        /* SUCCESS */
         .success {
-            background: #1a3a1a;
-            border: 1px solid #2d7d2d;
-            color: #4caf50;
-            padding: 12px 20px;
-            border-radius: 8px;
+            background: #f0eee9;
+            border: 1px solid #e8e6e1;
+            color: #1c1c1a;
+            padding: 12px 16px;
+            border-radius: 14px;
             margin-bottom: 20px;
-            transition: border-color 0.3s;
+            font-size: 13px;
         }
 
+        /* BUTTON CREATE */
+        .btn-creer {
+            display: inline-block;
+            background: #1c1c1a;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 25px;
+            transition: 0.2s;
+        }
+
+        .btn-creer:hover {
+            opacity: 0.85;
+        }
+
+        /* CARD */
         .annonce-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: border-color 0.3s;
+            background: #ffffff;
+            border: 1px solid #e8e6e1;
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 16px;
+            transition: 0.2s ease;
         }
 
-        .annonce-card:hover { border-color: #4f9ef8; }
+        .annonce-card:hover {
+            border-color: #d6d2cb;
+            transform: translateY(-2px);
+        }
 
         .annonce-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
+            align-items: center;
+            margin-bottom: 10px;
+            gap: 10px;
         }
 
         .annonce-card h3 {
-            color: #ffffff;
-            font-size: 18px;
+            font-size: 16px;
+            color: #1c1c1a;
         }
 
+        /* BADGES */
         .badge-type {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            flex-shrink: 0;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
         }
 
-        .badge-type.info  {background: #1e3a5f; color: #4f9ef8;}
-        .badge-type.alerte  {background: #3a2a1a; color: #f0a040;}
-        .badge-type.evenement  {background: #1a3a1a; color: #4caf50;}
+        .badge-type.info {
+            background: #f0eee9;
+            color: #1c1c1a;
+        }
 
+        .badge-type.alerte {
+            background: #fff3e6;
+            color: #8a4b00;
+        }
+
+        .badge-type.evenement {
+            background: #e9f5ee;
+            color: #1f6b3a;
+        }
+
+        /* TEXT */
         .annonce-card p {
-            color: #aaa;
-            line-height: 1.7;
-            margin-bottom: 10px;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
         }
 
         .annonce-meta {
-            color: #555;
             font-size: 12px;
+            color: #999;
+        }
+
+        /* ACTIONS */
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
         }
 
         .btn-supprimer {
-            background: #7d2d2d;
-            color: white;
-            border: none;
-            padding: 5px 12px;
-            border-radius: 6px;
-            cursor: pointer;
+            background: transparent;
+            border: 1px solid #e8e6e1;
+            color: #1c1c1a;
+            padding: 6px 10px;
+            border-radius: 10px;
             font-size: 12px;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .btn-supprimer:hover {opacity: 0.85;}
+        .btn-supprimer:hover {
+            border-color: #b00020;
+            color: #b00020;
+        }
 
+        /* EMPTY */
         .empty {
             text-align: center;
             color: #888;
-            padding: 60px;
-        }
-
-        .btn-creer {
-            display: inline-block;
-            background: #4f9ef8 ;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 8px;
-            text-decoration: none;
+            padding: 60px 20px;
             font-size: 15px;
-            margin-bottom: 25px;
         }
     </style>
-</head> 
-<body>    
+</head>
+
+<body>
+
     <div class="header">
         <h1>📢 Annonces</h1>
-        <p>Actualité et informations de la commune</p>
+        <p>Actualités et informations de la commune</p>
     </div>
 
     <div class="nav">
-        <a href="{{ route('communaute.index') }}"><-Annuaire</a>
+        <a href="{{ route('communaute.index') }}">← Annuaire</a>
+
         @auth
             <a href="{{ route('dashboard') }}">Mon compte</a>
+
             @if(auth()->user()->is_admin)
-                <a href="{{ route('admin.index') }}">Dashboard Admin</a>
+                <a href="{{ route('admin.index') }}">Admin</a>
             @endif
         @endauth
     </div>
 
     <div class="container">
+
         @if(session('success'))
             <div class="success">{{ session('success') }}</div>
         @endif
 
         @auth
             @if(auth()->user()->is_admin)
-                <a href="{{ route('annonces.create') }}" class="btn-creer">+ Nouvelle annonce</a>
+                <a href="{{ route('annonces.create') }}" class="btn-creer">
+                    + Nouvelle annonce
+                </a>
             @endif
         @endauth
-    
+
         @forelse($annonces as $annonce)
+
             <div class="annonce-card">
+
                 <div class="annonce-header">
                     <h3>{{ $annonce->titre }}</h3>
                     <span class="badge-type {{ $annonce->type }}">
@@ -163,9 +238,9 @@
 
                 <p>{{ $annonce->contenu }}</p>
 
-                <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div class="actions">
                     <span class="annonce-meta">
-                        Publié le {{ $annonce->created_at->format('d/m/Y à H:i') }}
+                        {{ $annonce->created_at->format('d/m/Y à H:i') }}
                     </span>
 
                     @auth
@@ -173,26 +248,28 @@
                             <form method="POST" action="{{ route('annonces.destroy', $annonce) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn-supprimer" onclick="return confirm('Supprimer cette annonce ?')">
-                                    🗑 Supprimer
+                                <button class="btn-supprimer"
+                                        onclick="return confirm('Supprimer cette annonce ?')">
+                                    Supprimer
                                 </button>
                             </form>
                         @endif
                     @endauth
                 </div>
+
             </div>
 
-            
         @empty
             <div class="empty">
-                <p>Aucune annonce pour le moment.</p>
+                Aucune annonce pour le moment.
             </div>
         @endforelse
 
         <div style="text-align:center; margin-top:20px;">
             {{ $annonces->links() }}
         </div>
+
     </div>
-    
+
 </body>
 </html>

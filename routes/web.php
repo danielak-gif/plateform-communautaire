@@ -5,10 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommunauteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnnonceController;
+use Illuminate\Support\Facades\DB;
+
+Route::get('/db-test', function () {
+    return DB::connection()->getPdo() ? "OK DB" : "FAIL";
+});
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/dashboard', function () {
     $monProfil = App\Models\Profile::where('user_id', auth()->id())->first();

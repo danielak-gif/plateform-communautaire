@@ -3,134 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nouvelle  annonce</title>
+    <title>Nouvelle annonce</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
-            background-color : #0f0f0f;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f3ef;
+            color: #1c1c1a;
+            font-family: "DM Sans", system-ui, -apple-system, Segoe UI, sans-serif;
             min-height: 100vh;
             padding: 40px 20px;
         }
 
+        /* NAV */
         .nav {
-            text-align : center;
+            text-align: center;
             margin-bottom: 30px;
         }
 
         .nav a {
-            color: #4f9ef8;
+            color: #1c1c1a;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 12px;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: 0.2s;
         }
-        
+
+        .nav a:hover {
+            opacity: 1;
+        }
+
+        /* CONTAINER */
         .container {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
-            background: #1a1a1a;
-            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #e8e6e1;
+            border-radius: 18px;
             padding: 40px;
-            border: 1px solid #2a2a2a;
         }
 
         h1 {
-            color: #4f9ef8;
-            margin-bottom: 10px;
-            font-size: 28px;
+            font-family: "DM Serif Display", serif;
+            font-size: 30px;
+            color: #1c1c1a;
+            margin-bottom: 8px;
         }
 
-        p.subtitle {
+        .subtitle {
             color: #888;
-            margin-bottom: 30px;
             font-size: 14px;
+            margin-bottom: 30px;
         }
 
-        .form-group { margin-bottom:20px; }
+        /* FORM */
+        .form-group {
+            margin-bottom: 18px;
+        }
 
         label {
             display: block;
-            margin-bottom: 6px;
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 12px 15px;
-            background: #252525;
-            border: 1px solid #333;
-            border-radius: 8px;
-            color: #e0e0e0;
-            font-size: 15px;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: #4f9ef8;
-        }
-
-        textarea { height: 150px;resize: vertical; }
-
-        .error {
-            color: #ff6b6b;
             font-size: 13px;
+            margin-bottom: 6px;
+            color: #1c1c1a;
+            opacity: 0.7;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 14px;
+            border: 1px solid #e8e6e1;
+            background: #ffffff;
+            font-size: 14px;
+            outline: none;
+            color: #1c1c1a;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #1c1c1a;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* ERROR */
+        .error {
+            font-size: 12px;
+            color: #b00020;
             margin-top: 5px;
         }
 
+        /* BUTTON */
         .btn {
             width: 100%;
-            padding: 14px;
-            background: #4f9ef8;
-            color: white;
+            padding: 13px;
+            border-radius: 14px;
             border: none;
-            border-radius: 8px;
-            font-size: 16px;
+            background: #1c1c1a;
+            color: white;
+            font-size: 14px;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: 0.2s;
+            margin-top: 10px;
         }
 
-        .btn:hover { background: #2d7dd2;}
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* ICON STYLE (OPTION UX CLEAN) */
+        .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="nav">
-        <a href="{{ route('annonces.index') }}"><- Retour aux annonces</a>
-        <a href="{{ route('admin.index') }}">Dashboard Admin</a>
+        <a href="{{ route('annonces.index') }}">← Retour aux annonces</a>
+        <a href="{{ route('admin.index') }}">Admin</a>
     </div>
 
     <div class="container">
+
         <h1>Nouvelle annonce</h1>
-        <p class="subtitle">Publiez une annonce visible par tous les utilisateurs.</p>
+        <p class="subtitle">
+            Publiez une annonce visible par tous les utilisateurs de la communauté.
+        </p>
 
         <form method="POST" action="{{ route('annonces.store') }}">
             @csrf
 
+            <!-- TITRE -->
             <div class="form-group">
                 <label>Titre *</label>
-                <input type="text" name="titre" value="{{ old('titre') }}" placeholder="Ex: Réunion communautaire du 15 juin">
-                @error('titre') <p class="error">{{ $message }}</p> @enderror
+                <input type="text"
+                       name="titre"
+                       value="{{ old('titre') }}"
+                       placeholder="Ex: Réunion communautaire du 15 juin">
+                @error('titre')
+                    <div class="error">{{ $message }}</div>
+                @enderror
             </div>
 
+            <!-- TYPE -->
             <div class="form-group">
                 <label>Type</label>
                 <select name="type">
-                    <option value="info">ℹ️ Information</option>
-                    <option value="alerte">⚠️ Alerte</option>
-                    <option value="evenement">📅 Evènement</option>
+                    <option value="info">Information</option>
+                    <option value="alerte">Alerte</option>
+                    <option value="evenement">Évènement</option>
                 </select>
+                <div class="hint">Choisissez le niveau d’importance de l’annonce</div>
             </div>
 
+            <!-- CONTENU -->
             <div class="form-group">
                 <label>Contenu *</label>
-                <textarea name="contenu" placeholder="Rédigez votre annonce ici...">{{  old('contenu') }}</textarea>
-                @error('contenu') <p class="error">{{ $message }}</p> @enderror
+                <textarea name="contenu"
+                          placeholder="Rédigez votre annonce ici...">{{ old('contenu') }}</textarea>
+                @error('contenu')
+                    <div class="error">{{ $message }}</div>
+                @enderror
             </div>
 
-            <button type="submit" class="btn">📢 Publier l'annonce</button>
+            <button type="submit" class="btn">
+                Publier l’annonce
+            </button>
+
         </form>
+
     </div>
+
 </body>
 </html>
