@@ -3,6 +3,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "pvendor/bin/heroku-php-apache2 public/"
+    "startCommand": "vendor/bin/heroku-php-apache2 public/"
   }
 }
