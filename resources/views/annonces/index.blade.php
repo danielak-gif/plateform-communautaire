@@ -265,7 +265,7 @@
             </div>
         @endforelse
 
-        <div style="text-align:center; margin-top:20px;">
+        <div class="text-center mt-5">
             {{ $annonces->links() }}
         </div>
 

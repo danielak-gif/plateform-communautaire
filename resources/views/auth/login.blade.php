@@ -177,7 +177,7 @@
                 </div>
 
                 <!-- Button -->
-                <div class="row" style="justify-content: flex-end;">
+                <div class="row justify-end">
                     <button type="submit" class="btn">
                         Se connecter
                     </button>

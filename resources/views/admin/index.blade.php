@@ -296,11 +296,11 @@
                 </td>
                 <td>
                     @if($profile->statut === 'en_attente')
-                        <form method="POST" action="{{ route('admin.profiles.approuver', $profile->id) }}" style="display:inline">
+                        <form method="POST" action="{{ route('admin.profiles.approuver', $profile->id) }}" class="inline">
                             @csrf @method('PATCH')
                             <button type="submit">✅ Approuver</button>
                         </form>
-                        <form method="POST" action="{{ route('admin.profiles.rejeter', $profile->id) }}" style="display:inline">
+                        <form method="POST" action="{{ route('admin.profiles.rejeter', $profile->id) }}" class="inline">
                             @csrf @method('PATCH')
                             <button type="submit">❌ Rejeter</button>
                         </form>
@@ -309,7 +309,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="6" style="text-align:center; color:#888;">
+                <td colspan="6" class="text-center text-gray-500">
                     Aucun profil
                 </td>
             </tr>

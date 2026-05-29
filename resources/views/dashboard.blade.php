@@ -8,7 +8,7 @@
         </div>
     </x-slot>
 
-    <div class="min-h-screen py-10 px-4" style="background:#f5f3ef">
+    <div class="min-h-screen py-10 px-4 bg-stone-50">
         <div class="max-w-4xl mx-auto">
 
             {{-- Bienvenue --}}

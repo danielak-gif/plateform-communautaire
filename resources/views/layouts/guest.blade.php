@@ -14,12 +14,12 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased" style="background:#f5f3ef; color:#1c1c1a">
+    <body class="font-sans antialiased bg-stone-50 text-stone-900">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
 
             <div class="mb-6">
                 <a href="/">
-                    <img src="{{ asset('logo.png') }}" alt="Logo" class="logo" style="max-width:140px; max-height:56px; width:auto; height:auto;">
+                    <img src="{{ asset('logo.png') }}" alt="Logo" class="logo">
                 </a>
             </div>
 
