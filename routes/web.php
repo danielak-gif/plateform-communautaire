@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/annuaire', [CommunauteController::class, 'index'])->name('communaute.index');
 Route::view('/projet-8', 'projet8')->name('projet8');
+Route::redirect('/projet8', '/projet-8');
 
 Route::middleware('auth')->group(function () {
     Route::get('/annuaire/soumettre', [CommunauteController::class, 'create'])->name('communaute.create');
