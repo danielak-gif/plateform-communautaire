@@ -40,10 +40,10 @@ class CommunauteController extends Controller
             'telephone' => 'nullable|string|max:20',
             'bio' => 'nullable|string',
             'categorie' => 'nullable|string|max:255',
-            'photo' => 'nullable|string|max:2048',
+            'photo' => 'nullable|image|max:2048',
         ]);
 
-        if ($request->hasFile('photo')){
+        if ($request->hasFile('photo')) {
             $data['photo_path'] = $request->file('photo')->store('photos', 'public');
         }
 

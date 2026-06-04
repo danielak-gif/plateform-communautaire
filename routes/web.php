@@ -29,9 +29,14 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/annuaire', [CommunauteController::class, 'index'])->name('communaute.index');
+Route::view('/projet-8', 'projet8')->name('projet8');
+
+Route::middleware('auth')->group(function () {
     Route::get('/annuaire/soumettre', [CommunauteController::class, 'create'])->name('communaute.create');
     Route::post('/annuaire/soumettre', [CommunauteController::class, 'store'])->name('communaute.store');
-    Route::get('/annuaire/{profile}', [CommunauteController::class, 'show'])->name('communaute.show');
+});
+
+Route::get('/annuaire/{profile}', [CommunauteController::class, 'show'])->name('communaute.show');
 
 Route::patch('/admin/profiles/{profile}/approuver', [AdminController::class, 'approuver'])
      ->name('admin.profiles.approuver');

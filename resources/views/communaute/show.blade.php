@@ -115,6 +115,33 @@
             margin-bottom: 5px;
         }
 
+        .status {
+            display: inline-flex;
+            margin-top: 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff4e5;
+            color: #c56b00;
+            border: 1px solid #f5d2a2;
+        }
+
+        .status-approved {
+            background: #e8f7ed;
+            color: #166534;
+            border: 1px solid #a7f3d0;
+        }
+
+        .status-rejected {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
         .info-item .value {
             color: #1c1c1a;
             font-size: 14px;
@@ -196,22 +223,14 @@
                 @if($profile->categorie)
                     <span class="categorie">{{ $profile->categorie }}</span>
                 @endif
-            </div>
-        </div>
 
-        <div class="infos">
-            @if($profile->secteur)
-                <div class="info-item">
-                    <div class="label">Secteur</div>
-                    <div class="value">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
-                        </svg>
-                        {{ $profile->secteur }}
-                    </div>
-                </div>
-            @endif
-
+                @if($profile->statut === 'en_attente')
+                    <p class="status status-pending">Profil en attente de validation</p>
+                @elseif($profile->statut === 'approuve')
+                    <p class="status status-approved">Profil validé</p>
+                @elseif($profile->statut === 'rejete')
+                    <p class="status status-rejected">Profil rejeté</p>
+                @endif
             @if($profile->niveau_etude)
                 <div class="info-item">
                     <div class="label">Niveau d'étude</div>
