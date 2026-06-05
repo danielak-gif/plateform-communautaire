@@ -40,13 +40,13 @@
                 <h3 class="text-2xl font-semibold text-stone-900">Documents du projet</h3>
                 <p class="mt-2 text-sm text-stone-600">Consultez les livrables structurants avant de découvrir les membres du groupe.</p>
                 <div class="mt-4 grid gap-4 sm:grid-cols-3">
-                    <a href="/docs/usecase_diagram.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="/docs/usecase_diagram.pdf" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Diagramme de cas d'utilisation
                     </a>
-                    <a href="/docs/dictionnaire_donnees.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="/docs/dictionnaire_donnees.pdf" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Dictionnaire des données
                     </a>
-                    <a href="/docs/diagramme_classes.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="/docs/diagramme_classes.pdf" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Diagramme de classes
                     </a>
                 </div>
