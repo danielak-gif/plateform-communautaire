@@ -24,7 +24,7 @@
                                 <p class="text-xs uppercase tracking-[0.2em] text-stone-400">Projet</p>
                                 <div class="mt-2 flex flex-col gap-2">
                                     <a href="https://plateform-communautaire-production.up.railway.app/" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-900">Visiter le projet</a>
-                                    <a href="https://github.com/ton-organisation/plateforme-communautaire" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-slate-900">Voir le dépôt GitHub</a>
+                                    <a href="https://github.com/danielak-gif/plateform-communautaire" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-slate-900">Voir le dépôt GitHub</a>
                                 </div>
                             </div>
                         </div>
