@@ -46,7 +46,7 @@
                     <a href="/docs/dictionnaire_donnees.pdf" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Dictionnaire des données
                     </a>
-                    <a href="/docs/diagramme_classes.pdf" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="/docs/class_diagram" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Diagramme de classes
                     </a>
                 </div>
