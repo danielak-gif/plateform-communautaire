@@ -24,7 +24,7 @@
                                 <p class="text-xs uppercase tracking-[0.2em] text-stone-400">Projet</p>
                                 <div class="mt-2 flex flex-col gap-2">
                                     <a href="https://plateform-communautaire-production.up.railway.app/" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-900">Visiter le projet</a>
-                                    <a href="https://github.com/ton-organisation/plateforme-communautaire" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-slate-900">Voir le dépôt GitHub</a>
+                                    <a href="https://github.com/danielak-gif/plateform-communautaire" target="_blank" rel="noreferrer" class="inline-flex items-center text-sm font-semibold text-slate-600 hover:text-slate-900">Voir le dépôt GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -40,13 +40,13 @@
                 <h3 class="text-2xl font-semibold text-stone-900">Documents du projet</h3>
                 <p class="mt-2 text-sm text-stone-600">Consultez les livrables structurants avant de découvrir les membres du groupe.</p>
                 <div class="mt-4 grid gap-4 sm:grid-cols-3">
-                    <a href="#" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="public/docs/usecase_diagram.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Diagramme de cas d'utilisation
                     </a>
-                    <a href="#" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="public/docs/data_dictionary.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Dictionnaire des données
                     </a>
-                    <a href="#" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
+                    <a href="public/docs/class_diagram.docx" target="_blank" rel="noreferrer" class="rounded-2xl border border-stone-200 bg-stone-50 px-4 py-4 text-sm font-semibold text-stone-900 hover:border-stone-300 hover:bg-stone-100">
                         Diagramme de classes
                     </a>
                 </div>
@@ -63,7 +63,6 @@
                             </div>
                             <div class="mt-3 flex gap-3 sm:mt-0">
                                 <a href="http://danielsitemagasin.infinityfreeapp.com/testproject/?i=1" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full bg-stone-900 px-4 py-2 text-sm font-medium text-white hover:bg-stone-800">Voir son site</a>
-                                <a href="https://github.com/akonde-daniel" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-900 hover:bg-stone-100">GitHub</a>
                             </div>
                         </div>
                         <div class="rounded-2xl bg-stone-50 p-4 sm:flex sm:items-center sm:justify-between">
@@ -73,7 +72,7 @@
                             </div>
                             <div class="mt-3 flex gap-3 sm:mt-0">
                                 <a href="https://yaneesken.infinityfree.me/connexion.php" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full bg-stone-900 px-4 py-2 text-sm font-medium text-white hover:bg-stone-800">Voir son site</a>
-                                <a href="https://github.com/yanees-dochamou" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-900 hover:bg-stone-100">GitHub</a>
+
                             </div>
                         </div>
                     </div>
@@ -87,63 +86,63 @@
                                 <p class="text-sm font-semibold text-stone-900">Joanel ANATO</p>
                             </div>
                             <a href="https://eneam-gestion.kesug.com/enea/connexion.php?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/joanel-anato" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Purgis AMOUSSOU</p>
                             </div>
                             <a href="https://amoussoustore.infinityfree.me/?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/purgis-amoussou" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+                
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">AKOUEHOU Carmelle</p>
                             </div>
                             <a href="https://academiqueprojet.infinityfreeapp.com/?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/akoueho-carmelle" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+             
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Oscar BATAKOU</p>
                             </div>
                             <a href="https://oscarbatakou.infinityfree.me/login.php?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/oscar-batakou" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+                   
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Durrell HEDIPLE</p>
                             </div>
                             <a href="https://durelle.infinityfree.me/plateforme/connexion.php?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/durrell-hediple" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+    
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Flora OGOUDARE</p>
                             </div>
                             <a href="https://glory-boutique-flora.infinityfree.me/index.php?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/flora-ogoudare" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+         
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Judicaël TINKOU</p>
                             </div>
                             <a href="https://jude-code.infinityfreeapp.com/index.php?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/judicael-tinkou" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Angela TOMAGNIMENA</p>
                             </div>
                             <a href="https://murielle.infinityfreeapp.com/?i=1" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/angela-tomagnimena" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+  
                         </div>
                         <div class="grid gap-3 sm:grid-cols-[1fr_auto_auto] sm:items-center rounded-2xl bg-stone-50 p-4">
                             <div>
                                 <p class="text-sm font-semibold text-stone-900">Ébénezer ZINSOU</p>
                             </div>
                             <a href="https://eben.lovestoblog.com/index.php" target="_blank" rel="noreferrer" class="text-sm font-semibold text-emerald-700 hover:text-emerald-900">Site</a>
-                            <a href="https://github.com/ebenezer-zinsou" target="_blank" rel="noreferrer" class="text-sm font-semibold text-slate-600 hover:text-slate-900">GitHub</a>
+
                         </div>
                     </div>
                 </div>
